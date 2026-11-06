@@ -226,7 +226,9 @@ section {
 @media (max-width: 1450px) {
     body {
         --contentWidth: 80vw;
-        --contentPadding: 0vw;
+        --contentPadding: 10vw;
+        --headerWidth: 100vw;
+        --headerPadding: 0vw;
     }
 
     /*Go from row of 4 to 2 rows of 2 when narrower*/
@@ -255,17 +257,17 @@ section {
         text-align: center;
     }
 
-    #splash {
+    .desktop {
         display: none !important;
+    }
+
+    .mobile {
+        display: block !important;
     }
 }
 
 /*Stack on top of each other when screen very narrow*/
-@media (max-width: 1250px) {
-    body {
-        --headerWidth: 100vw;
-        --headerPadding: 0vw;
-    }
+@media (max-width: 650px) {
 
     #about {
         grid-template-columns: 1fr;
@@ -311,12 +313,8 @@ section {
         }
     }
 
-    .desktop {
+    #splash {
         display: none !important;
-    }
-
-    .mobile {
-        display: block !important;
     }
     
 }
