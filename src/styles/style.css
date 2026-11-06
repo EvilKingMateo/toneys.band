@@ -31,6 +31,8 @@
     --largeScreen: 1000px;
     --mediumScreen: 500px;
     --smallScreen: 300px;
+
+    --splash: hidden;
 }
 
 

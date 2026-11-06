@@ -1,12 +1,17 @@
 ---
 import Boiler from './defaults/boilerplate.astro';
 import Dropdown from './sections/dropdown.astro';
+import Splash from './sections/splash.astro';
 
 interface Props {
-	title: string;
+	title?: string;
+	band?: string;
 }
 
-const {title} = Astro.props;
+const {
+	title,
+	band = "The Toneys"
+} = Astro.props;
 
 import '../styles/style.css';
 ---
@@ -19,7 +24,7 @@ import '../styles/style.css';
 		<a href='/about' class="desktop">meet the band</a>
 	</div>
 
-	<div id="centre"><a href='/'><b><span id="band">The Toneys</span></b></a></div>
+	<div id="centre"><a href='/'><b><span id="band">{band}</span></b></a><Splash></div>
 
 	<div id="right">
 		<Dropdown Name="Sister Bands" Class="desktop">

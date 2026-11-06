@@ -1,0 +1,50 @@
+
+<style>
+    span {
+        position: relative;
+        z-index: 1;
+    }
+
+    @keyframes splash {
+        0%, 100% {
+            transform: translate(-50%, 50%) rotate(-10deg) scale(1);
+        }
+        50% {
+            transform: translate(-50%, 50%) rotate(-10deg) scale(1.35);
+        }
+    }
+
+    span::after {
+        content: attr(data-splash);
+        position: absolute;
+        z-index: 2;
+ 
+        text-align: center;
+        white-space: nowrap;
+        left: 50%;
+        top: 0;
+
+        font-family: var(--phoneysFont);
+        font-size: 20px;
+        animation-name: splash;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
+        visibility: var(--splash);
+    }
+</style>
+
+
+<script>
+    const response = await fetch("https://assets.toneys.band/phoneys/splash%20text.txt");
+    const splashtext = (await response.text()).split(/\r?\n/);
+    var span = document.getElementById("splash");
+
+    const random = Math.floor(Math.random() * splashtext.length);
+
+    span.dataset.splash = splashtext[random]
+    console.log(splashtext[random])
+</script>
+
+
+<span id="splash"></span>
