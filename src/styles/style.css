@@ -223,7 +223,7 @@ section {
     display: none !important;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1450px) {
     body {
         --contentWidth: 80vw;
         --contentPadding: 0vw;
@@ -254,13 +254,15 @@ section {
     p {
         text-align: center;
     }
+
+    #splash {
+        display: none !important;
+    }
 }
 
 /*Stack on top of each other when screen very narrow*/
-@media (max-width: 500px) {
+@media (max-width: 1250px) {
     body {
-        --contentWidth: 100vw;
-        --contentPadding: 0vw;
         --headerWidth: 100vw;
         --headerPadding: 0vw;
     }
@@ -316,6 +318,7 @@ section {
     .mobile {
         display: block !important;
     }
+    
 }
 
 /*put title and dropdown in centre when screen very narrow*/
