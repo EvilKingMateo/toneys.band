@@ -43,8 +43,11 @@
 
     const random = Math.floor(Math.random() * splashtext.length);
 
-    span.dataset.splash = splashtext[random]
-    console.log(splashtext[random])
+
+    if (span) {
+        span.dataset.splash = splashtext[random];
+        console.log(splashtext[random]);
+    }
 </script>
 
 
