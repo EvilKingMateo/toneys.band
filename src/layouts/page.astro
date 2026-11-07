@@ -6,11 +6,13 @@ import Splash from './sections/splash.astro';
 interface Props {
 	title?: string;
 	band?: string;
+	email?: string;
 }
 
 const {
 	title,
-	band = "The Toneys"
+	band = "The Toneys",
+	email = "tony@toneys.band"
 } = Astro.props;
 
 import '../styles/style.css';
@@ -58,7 +60,7 @@ import '../styles/style.css';
 			<a href="/o7">The Phoneys</a>
 		</div>
 		<div id="email">
-			<b>We've got mail?:</b><a href="mailto: tony@toneys.band">tony@toneys.band</a><br>
+			<b>We've got mail?:</b><a href={"mailto: " + email}>{email}</a><br>
 		</div>
 		<div id="socials">
 			<b>Social Media:</b><a href="https://www.instagram.com/toneys.jazz/">Instagram</a></div>
